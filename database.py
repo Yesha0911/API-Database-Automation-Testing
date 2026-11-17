@@ -4,12 +4,8 @@ import sqlite3
 connection = sqlite3.connect("test_database.db")
 cursor = connection.cursor()
 
-# Remove old table
-cursor.execute("DROP TABLE IF EXISTS users")
-
-# Create new table with constraints
 cursor.execute("""
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
@@ -18,8 +14,7 @@ CREATE TABLE users (
 """)
 
 connection.commit()
-
-print("Users Table Recreated Successfully!")
-print("UNIQUE Email Constraint Added!")
-
 connection.close()
+
+print("Database is ready!")
+print("Users table created or already exists.")
