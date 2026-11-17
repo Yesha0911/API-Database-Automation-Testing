@@ -1,0 +1,21 @@
+
+# Virtual Environment
+.venv/
+venv/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Test Reports
+reports/
+
+# Environment Variables
+.env
+
+# IDE Settings
+.vscode/
+
+# SQLite Database
+*.db
